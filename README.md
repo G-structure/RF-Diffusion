@@ -31,7 +31,7 @@ You can run the evaluation script that produces the major figures in our paper i
     
 **2. Local Setup**
   * Clone this repository.
-  * Install [Python 3](https://www.python.org/downloads/) if you have not already. Then, run pip3 install ```-r requirements.txt``` at the root directory of ```/plots``` folder to install the dependencies.
+  * Install [Python 3](https://www.python.org/downloads/) if you have not already. Then, run `uv pip install -r requirements.txt` inside the `/plots` folder to install the dependencies.
   * Run code files in ```/plots/code``` directory one by one and wait for 15 minutes as the data are being processed.
   * In ```/plots/img``` directory, figures used in our paper can be found.
 
@@ -53,24 +53,21 @@ In this section, we offer training code, testing code, and pre-trained models. Y
 
 ## 0. Prerequisite
 
-RF-Diffusion is implemented with [Python 3.8](https://www.python.org/downloads/) and [PyTorch 2.0.1](https://pytorch.org/). We manage the development environment using [Conda](https://anaconda.org/anaconda/conda).
-Execute the following commands to configure the development environment.
+RF-Diffusion is implemented with [Python 3.8](https://www.python.org/downloads/) and [PyTorch 2.0.1](https://pytorch.org/). The project now relies on [uv](https://github.com/astral-sh/uv) for dependency management.
+Execute the following commands to configure the development environment using a virtual environment managed by `uv`.
 
-- Create a conda environment called `RF-Diffusion` based on python 3.8, and activate the environment.
+- Create and activate a virtual environment:
     ```bash
-    conda create -n RF-Diffusion python=3.8
-    conda activate RF-Diffusion 
+    uv venv .venv
+    source .venv/bin/activate
     ```
 
-- Install PyTorch, as well as other required packages.
+- Install the project together with its dependencies defined in `pyproject.toml`.
     ```bash
-    pip3 install torch
-    ```
-    ```bash
-    pip3 install numpy scipy tensorboard tqdm matplotlib torchvision pytorch_fid
+    uv pip install -e .
     ```
 
-For more details about the environment configuration, refer to the `requirements.txt` file in [releases](https://github.com/mobicom24/RF-Diffusion/releases/tag/dataset_model).
+The dependency list is declared in `pyproject.toml`. After activating the environment, `uv` will install all required packages automatically.
 
 Download or `git clone` the `RF-Diffusion` project. Download and unzip `dataset.zip` and `model.zip` in [releases](https://github.com/mobicom24/RF-Diffusion/releases/tag/dataset_model) to the project directory.
 
