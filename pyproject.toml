@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rf-diffusion"
+version = "0.1.0"
+description = "RF-Diffusion: Radio Signal Generation via Time-Frequency Diffusion"
+readme = "README.md"
+requires-python = ">=3.8"
+
+# Core runtime dependencies
+dependencies = [
+    "torch>=2.0.1",
+    "numpy",
+    "scipy",
+    "tensorboard",
+    "tqdm",
+    "matplotlib",
+    "torchvision",
+    "pytorch_fid"
+]
+
+[project.optional-dependencies]
+plots = [
+    "matplotlib",
+    "scipy",
+    "numpy"
+]
