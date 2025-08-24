@@ -1,0 +1,13 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Environment directories
+.venv/
+.uv/
+
+# Data/Model artifacts
+/dataset/
+/model/
+
